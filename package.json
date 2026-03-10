@@ -1,0 +1,23 @@
+{
+  "name": "week3-ghcp-test",
+  "version": "1.0.0",
+  "description": "<img src=\"https://octodex.github.com/images/Professortocat_v2.png\" align=\"right\" height=\"200px\" />",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Livingston-Anthonyswamy/Week3-GHCP-Test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Livingston-Anthonyswamy/Week3-GHCP-Test/issues"
+  },
+  "homepage": "https://github.com/Livingston-Anthonyswamy/Week3-GHCP-Test#readme",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
+}
