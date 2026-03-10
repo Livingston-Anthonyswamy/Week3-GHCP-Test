@@ -100,9 +100,75 @@ describe('Calculator - Division Tests', () => {
   });
 });
 
+describe('Calculator - Modulo Tests', () => {
+  test('should calculate modulo: 17 % 5 = 2', () => {
+    expect(calculator(17, '%', 5)).toBe(2);
+  });
+
+  test('should calculate modulo with equal numbers: 10 % 10 = 0', () => {
+    expect(calculator(10, '%', 10)).toBe(0);
+  });
+
+  test('should calculate modulo with remainder: 100 % 7 = 2', () => {
+    expect(calculator(100, '%', 7)).toBe(2);
+  });
+
+  test('should throw error for modulo by zero', () => {
+    expect(() => calculator(10, '%', 0)).toThrow('Modulo by zero is not allowed');
+  });
+
+  test('should handle negative modulo: -17 % 5 = -2', () => {
+    expect(calculator(-17, '%', 5)).toBe(-2);
+  });
+});
+
+describe('Calculator - Exponentiation Tests', () => {
+  test('should calculate power: 2 ** 8 = 256', () => {
+    expect(calculator(2, '**', 8)).toBe(256);
+  });
+
+  test('should calculate power: 5 ** 3 = 125', () => {
+    expect(calculator(5, '**', 3)).toBe(125);
+  });
+
+  test('should handle negative exponent: 2 ** -2 = 0.25', () => {
+    expect(calculator(2, '**', -2)).toBe(0.25);
+  });
+
+  test('should handle power of zero: 5 ** 0 = 1', () => {
+    expect(calculator(5, '**', 0)).toBe(1);
+  });
+
+  test('should handle negative base: (-2) ** 3 = -8', () => {
+    expect(calculator(-2, '**', 3)).toBe(-8);
+  });
+});
+
+describe('Calculator - Square Root Tests', () => {
+  test('should calculate square root: sqrt(16) = 4', () => {
+    expect(calculator(16, 'sqrt', 0)).toBe(4);
+  });
+
+  test('should calculate square root: sqrt(25) = 5', () => {
+    expect(calculator(25, 'sqrt', 0)).toBe(5);
+  });
+
+  test('should calculate square root of decimals: sqrt(2.25) = 1.5', () => {
+    expect(calculator(2.25, 'sqrt', 0)).toBe(1.5);
+  });
+
+  test('should handle square root of zero: sqrt(0) = 0', () => {
+    expect(calculator(0, 'sqrt', 0)).toBe(0);
+  });
+
+  test('should throw error for square root of negative number', () => {
+    expect(() => calculator(-9, 'sqrt', 0)).toThrow('Cannot calculate square root of a negative number');
+  });
+});
+
 describe('Calculator - Edge Cases and Error Handling', () => {
   test('should throw error for invalid operator', () => {
-    expect(() => calculator(5, '%', 3)).toThrow('Invalid operator');
+    expect(() => calculator(5, '&', 3)).toThrow('Invalid operator');
   });
 
   test('should throw error for non-numeric first operand', () => {

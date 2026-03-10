@@ -6,6 +6,9 @@
  * - Subtraction (-)
  * - Multiplication (*)
  * - Division (/)
+ * - Modulo (%)
+ * - Exponentiation (**)
+ * - Square Root (sqrt)
  */
 
 function calculator(num1, operator, num2) {
@@ -40,8 +43,26 @@ function calculator(num1, operator, num2) {
       }
       result = a / b;
       break;
+    case '%':
+      // Modulo operation - returns remainder of a divided by b
+      if (b === 0) {
+        throw new Error('Modulo by zero is not allowed');
+      }
+      result = a % b;
+      break;
+    case '**':
+      // Exponentiation operation - returns base raised to exponent
+      result = Math.pow(a, b);
+      break;
+    case 'sqrt':
+      // Square root operation - returns square root of a number
+      if (a < 0) {
+        throw new Error('Cannot calculate square root of a negative number');
+      }
+      result = Math.sqrt(a);
+      break;
     default:
-      throw new Error(`Invalid operator '${operator}'. Supported operators are: +, -, *, /`);
+      throw new Error(`Invalid operator '${operator}'. Supported operators are: +, -, *, /, %, **, sqrt`);
   }
 
   return result;
